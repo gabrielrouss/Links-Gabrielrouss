@@ -39,7 +39,7 @@ const Home: NextPage = () => {
           Instagram
         </a>
         <div className={styles.portfolio}>
-          <button onClick={HandleOnClick}>Examples - Portfolio</button>
+          <button onClick={HandleOnClick}>Work examples - Portfolio</button>
           <ul className={isActive ? styles.isActive : styles.inactive}>
             <li>
               <a href="https://ximenesservice.com.br" target="_blank" rel="noreferrer">
