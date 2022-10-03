@@ -4,8 +4,13 @@ import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 
 import avatar from "../src/images/Avatar.png";
+import { useState } from "react";
 
 const Home: NextPage = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const HandleOnClick = () => setIsActive(!isActive);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -33,6 +38,21 @@ const Home: NextPage = () => {
         <a href="https://www.instagram.com/gabrielrousselet/" rel="noreferrer" target="_blank">
           Instagram
         </a>
+        <div className={styles.portfolio}>
+          <button onClick={HandleOnClick}>Examples - Portfolio</button>
+          <ul className={isActive ? styles.isActive : styles.inactive}>
+            <li>
+              <a href="https://ximenesservice.com.br" target="_blank" rel="noreferrer">
+                Ximenes Service - Website
+              </a>
+            </li>
+            <li>
+              <a href="https://hush-concept-react.vercel.app" target="_blank" rel="noreferrer">
+                Hush - Example
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
